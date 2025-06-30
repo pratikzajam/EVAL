@@ -1,10 +1,12 @@
 import express from 'express';
-const app = express()
+const app = express();
+import Routes from './src/Routes/library.routes.js'
 const port = 3000
-import connectDb from './src/Model/ConnectionDb/connectDb.js';
+import connectDb from './src/ConnectionDb/connectDb.js'
 
 
 console.log(connectDb());
+app.use("/api", Routes)
 
 app.use(express.json());
 
