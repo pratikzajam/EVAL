@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import book from './book.model';
 const { Schema } = mongoose;
 
 const authorSchema = new Schema({
@@ -15,6 +16,10 @@ const authorSchema = new Schema({
         type: Number,
         required: true
     },
+    books: {
+        type: [Schema.Types.ObjectId],
+        ref: 'book'
+    }
 
 }, { timestamps: true });
 
